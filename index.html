@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio | Francesca Scafidi</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body style="margin:0; overflow:hidden;">
+
+<!-- SCHERMATA INIZIALE -->
+<div id="home" style="position: relative; display: inline-block; width:100%;">
+
+    <img src="Copertina 1920x1080.png" style="width:100%; display:block;">
+
+    <img src="Click here.gif"
+         style="position:absolute; top:56%; left:71%; width:7%;">
+
+    <a id="startAnimazione"
+       style="position:absolute; 
+              top:56%; 
+              left:71%; 
+              width:7%; 
+              height:7%; 
+              cursor:pointer;">
+    </a>
+
+</div>
+
+<!-- VIDEO (inizialmente nascosto) -->
+<video id="videoIntro"
+       style="display:none; width:100%; position:fixed; top:0; left:0;"
+       muted>
+    <source src="Animazione 1920x1080.mp4" type="video/mp4">
+</video>
+
+<script>
+
+// CLICK → parte il video
+document.getElementById("startAnimazione").addEventListener("click", function () {
+
+    document.getElementById("home").style.display = "none";
+
+    let video = document.getElementById("videoIntro");
+    video.style.display = "block";
+    video.play();
+
+});
+
+// FINE VIDEO → apre direttamente il PDF
+document.getElementById("videoIntro").addEventListener("ended", function () {
+
+    window.location.href = "Portfolio.pdf";
+
+});
+
+</script>
+
+</body>
+</html>
